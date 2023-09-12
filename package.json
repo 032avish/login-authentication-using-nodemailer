@@ -1,0 +1,20 @@
+{
+  "name": "rail-reservation",
+  "version": "1.0.0",
+  "description": "This is Railway booking window",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avish",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.2.0",
+    "mongoose": "^7.0.3",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.1"
+  }
+}

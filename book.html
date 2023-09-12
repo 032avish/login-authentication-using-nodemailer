@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/rail.png">
+    <title>205121032-TicketReservation</title>
+</head>
+<body>
+    <div class="im">
+        <img src="images/rail.png" alt="">
+    </div>
+    <div class="field">
+        <h1>205121032 Reservation System</h1>
+        <input type="text" id="sourceinput" placeholder="Enter the Source">
+        <input type="text" id="destinationinput" onkeyup='check()' placeholder="Enter the Destination">
+        <button class="btn1" onclick="submit_button()">Click me to see the availabe seats</button>
+        <span id="availableseat"></span>
+        <button class="btn2" onclick="book_button()">Click me to book ticket</button>
+    </div>
+    <script>
+        const source = ["Delhi" , "Mumbai", "Chennai" ,"Pune" ,"Hyderabad"];
+        const destination = ["Delhi" , "Mumbai", "Chennai" ,"Pune" ,"Hyderabad"];
+
+var seat = [
+  [100,100,100,100,100],
+  [100,100,100,100,100],
+  [100,100,100,100,100],
+  [100,100,100,100,100],
+  [100,100,100,100,100],
+];
+let x=1;
+let y=1;
+var check = function(){
+    var source_input = document.getElementById("sourceinput").value;
+    var destination_input = document.getElementById("destinationinput").value;
+    for(let i=0 ; i<5;i++)
+    {
+        if(source_input == source[i]) x=i;
+        if(destination_input == destination[i]) y=i;
+    }
+    
+}
+
+function submit_button(){
+    if(x!=-1&&y!=-1)
+    {
+        document.getElementById("availableseat").innerHTML="Available Seats are: "+seat[x][y];
+    }
+}
+
+function book_button(){
+    if(seat[x][y]>0){
+    seat[x][y]--;
+    document.getElementById("availableseat").innerHTML="Available Seats are: "+seat[x][y];
+    }
+    else{
+        document.getElementById("availableseat").innerHTML="Seats are full..!!";
+    }
+}
+    </script>
+</body>
+</html>
